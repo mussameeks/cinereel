@@ -13,19 +13,23 @@ const TrailerCard = ({ movie }) => {
   }, [movie.id]);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center text-white p-4">
-      <h2 className="text-xl font-bold mb-2 text-center">{movie.title}</h2>
+    <div className="w-full h-full flex flex-col justify-center items-center text-white px-4 py-8">
       {trailerKey ? (
-        <iframe
-          className="w-full h-[60vh] md:h-[70vh] rounded-lg"
-          src={`https://www.youtube.com/embed/${trailerKey}?autoplay=0`}
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-          title={movie.title}
-        />
+        <div className="w-full max-w-md">
+          <div className="aspect-video rounded-xl overflow-hidden shadow-lg mb-4">
+            <iframe
+              className="w-full h-full"
+              src={`https://www.youtube.com/embed/${trailerKey}?autoplay=0`}
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              title={movie.title}
+            />
+          </div>
+          <h2 className="text-center text-2xl font-bold">{movie.title}</h2>
+        </div>
       ) : (
-        <p>Loading trailer...</p>
+        <p className="text-lg">Loading trailer...</p>
       )}
     </div>
   );
