@@ -13,12 +13,11 @@ const TrailerCard = ({ movie }) => {
   }, [movie.id]);
 
   return (
-    <div className="trailer-card" style={{ marginBottom: '40px' }}>
-      <h2>{movie.title}</h2>
+    <div className="w-full h-full flex flex-col items-center justify-center text-white p-4">
+      <h2 className="text-xl font-bold mb-2 text-center">{movie.title}</h2>
       {trailerKey ? (
         <iframe
-          width="100%"
-          height="500"
+          className="w-full h-[60vh] md:h-[70vh] rounded-lg"
           src={`https://www.youtube.com/embed/${trailerKey}?autoplay=0`}
           frameBorder="0"
           allow="autoplay; encrypted-media"
