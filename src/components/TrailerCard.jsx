@@ -15,8 +15,8 @@ const TrailerCard = ({ movie }) => {
   return (
     <div className="w-full h-full flex flex-col justify-center items-center text-white px-4 py-8">
       {trailerKey ? (
-        <div className="w-full max-w-md">
-          <div className="aspect-video rounded-xl overflow-hidden shadow-lg mb-4">
+        <div className="w-full max-w-md mx-auto">
+          <div className="aspect-video rounded-xl overflow-hidden shadow-lg mb-4 bg-black">
             <iframe
               className="w-full h-full"
               src={`https://www.youtube.com/embed/${trailerKey}?autoplay=0`}
